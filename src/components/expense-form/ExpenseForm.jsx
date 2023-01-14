@@ -7,10 +7,7 @@ const ExpenseForm = (props) => {
   const [title, setTitle] = useState("");
   const [price, setPrise] = useState("");
   const [date, setDate] = useState("");
-  const enabled =
-  title.length > 0 &&
-  price.length > 0 &&
-  date.length > 0;
+  const enabled = title.length > 0 && price.length > 0 && date.length > 0;
   const cancelHandler = (event) => {
     event.preventDefault();
     props.onShowForm();
@@ -25,14 +22,14 @@ const ExpenseForm = (props) => {
     };
     props.onNewExpenseAdd(expenseDate);
     setTitle("");
-    
+
     setPrise("");
     setDate("");
   };
   const titleInputChangeHandler = (event) => {
     setTitle(event.target.value);
   };
-  
+
   const priceInputChangeHandler = (event) => {
     setPrise(event.target.value);
   };
@@ -40,7 +37,6 @@ const ExpenseForm = (props) => {
     setDate(event.target.value);
   };
 
- 
   return (
     <form className="form">
       <FormInput
@@ -71,7 +67,7 @@ const ExpenseForm = (props) => {
       />
       <div className="button_div">
         <Button title="Отмена" onClick={cancelHandler} />
-        <Button title="Сохранить" onClick={saveHandler} disabled={!enabled}/>
+        <Button title="Сохранить" onClick={saveHandler} disabled={!enabled} />
       </div>
     </form>
   );
@@ -79,13 +75,12 @@ const ExpenseForm = (props) => {
 
 export default ExpenseForm;
 
-
 // GIT vcs
-// GITHUB 
+// GITHUB
 // EACH COMPONENT HAS OWN STATE
-// LIFTING STATE UP 
+// LIFTING STATE UP
 // CHILDREN
-// KEYS 
-// commit push 
-// branches 
-// local end remote branches/ changes 
+// KEYS
+// commit push
+// branches
+// local end remote branches/ changes

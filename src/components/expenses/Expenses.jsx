@@ -10,25 +10,24 @@ const Expenses = ({ expenses }) => {
   };
   const filteredItems = expenses.filter((elem) => {
     const stringifiedYear = new Date(elem.date).getFullYear().toString();
-    return stringifiedYear === selectedYear;
+    return stringifiedYear == selectedYear;
   });
   return (
-      <ul className="ul-list">
+    <ul className="ul-list">
       <ExpensesFilter value={selectedYear} onChange={yearChangeHandler} />
-      <Chart items={filteredItems}/>
-        {filteredItems.map((elem) => {
-          return (
-            <ExpenseItem
-              title={elem.title}
-              date={elem.date}
-              price={elem.price}
-              key={elem.id + new Date().getTime}
-            />
-          );
-        })}
-      </ul>
+      <Chart items={filteredItems} />
+      {filteredItems.map((elem) => {
+        return (
+          <ExpenseItem
+            title={elem.title}
+            date={elem.date}
+            price={elem.price}
+            key={elem.id + new Date()}
+          />
+        );
+      })}
+    </ul>
   );
 };
 
 export default Expenses;
-

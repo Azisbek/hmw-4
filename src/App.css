@@ -1,13 +1,11 @@
 .apps {
-display: flex;
-justify-content: center;
-background: #1F1F1F;
-border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  background: #1f1f1f;
+  border-radius: 12px;
 }
 
-
-
 .items {
-text-align: center;
-width: 780px;
+  text-align: center;
+  width: 1000px;
 }

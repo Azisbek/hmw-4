@@ -1,7 +1,7 @@
 import React from "react";
 import ChartBar from "./ChartBar";
-import "./Chart.css"
-const Chart = ({items}) => {
+import "./Chart.css";
+const Chart = ({ items }) => {
   const maximumPrice = 2000;
   const month = [
     {
@@ -53,9 +53,9 @@ const Chart = ({items}) => {
       currentPrice: 0,
     },
   ];
-   items.forEach((item) => {
+  items.forEach((item) => {
     const mothNumber = new Date(item.date).getMonth();
-    month[mothNumber].currentPrice += item.price
+    month[mothNumber].currentPrice += item.price;
   });
   return (
     <div className="chart">
